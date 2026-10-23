@@ -1,0 +1,47 @@
+# Runs every test on every push and pull request.
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+      - run: pip install -r pipeline/requirements.txt
+      - name: Pipeline tests (rules, network with fakes, whole runs, benchmark floor)
+        working-directory: pipeline
+        run: python -m unittest discover -s tests -t . -v
+
+  app:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Unit tests
+        run: npm run test:unit
+      - name: End-to-end tests (preview build)
+        run: npm run test:preview
+      - name: End-to-end tests (public site, offline, CSP, scale)
+        run: npm run test:site
+        env:
+          GITHUB_REPOSITORY: example/muzeum
