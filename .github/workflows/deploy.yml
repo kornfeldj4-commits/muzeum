@@ -1,0 +1,56 @@
+# Builds the public site, tests it, and publishes it to GitHub Pages.
+# Runs after each data update, and on pushes to main that change the app or data.
+name: Deploy site
+on:
+  push:
+    branches: [main]
+    paths: ["app/**", "data/**", "site.config.json", ".github/workflows/deploy.yml"]
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main              # pick up the data commit made by the update job
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:unit
+      - name: Test the public site build
+        run: npm run test:site
+      - name: Build with the real data
+        run: node build.js
+      - name: Smoke test the real build
+        run: npm run smoke
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/dist
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
