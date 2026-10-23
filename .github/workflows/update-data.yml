@@ -1,0 +1,122 @@
+# Every day: discover museums (weekly), read changed visit pages, check them,
+# commit the new data and state (git history = audit trail), then deploy the site.
+name: Update museum data
+on:
+  schedule:
+    - cron: "17 10 * * *"          # 10:17 UTC daily, early morning in the US
+  workflow_dispatch:
+    inputs:
+      states:
+        description: "Postal codes separated by spaces, or ALL"
+        default: "ALL"
+      rediscover:
+        description: "Re-run Wikidata discovery now"
+        type: boolean
+        default: false
+      allow_shrink:
+        description: "Publish even if far fewer museums than last time (after checking the report)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+      - run: pip install -r pipeline/requirements.txt -r pipeline/requirements-render.txt
+      - run: python -m playwright install --with-deps chromium
+
+      - name: Check the API key is set
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::Add ANTHROPIC_API_KEY under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+
+      - name: Run the pipeline
+        working-directory: pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MUZEUM_MODEL: ${{ vars.MUZEUM_MODEL || 'claude-sonnet-5-5' }}
+          MUZEUM_MAX_EXTRACTIONS: ${{ vars.MUZEUM_MAX_EXTRACTIONS || '300' }}
+          MUZEUM_USER_AGENT: "MuzeumBot/1.0 (+https://github.com/${{ github.repository }}; museum opening hours for visitors)"
+        run: |
+          args="--states ${{ github.event.inputs.states || 'ALL' }}"
+          [ "${{ github.event.inputs.rediscover }}" = "true" ] && args="$args --rediscover"
+          [ "${{ github.event.inputs.allow_shrink }}" = "true" ] && args="$args --allow-shrink"
+          python run.py $args
+
+      - name: Write the run summary
+        if: always()
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, pathlib
+          p = pathlib.Path("pipeline/state/report.json")
+          if not p.exists():
+              print("No report written."); raise SystemExit
+          r = json.loads(p.read_text()); s = r["summary"]
+          print(f"## Muzeum data run {s['date']}")
+          print(f"- Museums tracked: {s['museums']} in {s['states']} states; on the site: {s['published']}")
+          print(f"- Published {s['publish']} · held {s['hold']} · dropped {s['drop']} · waiting for first read {s['pending']}")
+          print(f"- Model calls {s['calls']} (errors {s['errors']}, deferred {s['deferred']}); tokens in {s['input_tokens']:,}, out {s['output_tokens']:,}")
+          if r.get("breaker"): print(f"\n**Circuit breaker:** {r['breaker']}")
+          b = [x for k in r.get("benchmark", []) for x in k["rows"]]
+          if b: print(f"- Benchmark: {sum(x['ok'] for x in b)}/{len(b)} fields match the hand-checked key")
+          print("\nHeld museums are listed in `pipeline/state/review.md`.")
+          PY
+
+      - name: Commit data and state
+        id: commit
+        if: always()
+        run: |
+          git config user.name "muzeum-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data pipeline/state
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -q -m "Data run $(date -u +%F)"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open or update the review issue
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          held=$(python -c "import json;print(json.load(open('pipeline/state/report.json'))['summary']['hold'])")
+          num=$(gh issue list --label review-queue --state open --json number -q '.[0].number')
+          [ "$held" = "0" ] && { [ -n "$num" ] && gh issue close "$num" -c "Nothing held."; exit 0; }
+          gh label create review-queue --color 9a5200 --description "Museums waiting for a person" 2>/dev/null || true
+          if [ -n "$num" ]; then gh issue edit "$num" --body-file pipeline/state/review.md
+          else gh issue create --title "Review queue: museums shown as Usually open" --label review-queue --body-file pipeline/state/review.md; fi
+
+  deploy:
+    needs: update
+    if: needs.update.result == 'success'
+    uses: ./.github/workflows/deploy.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
