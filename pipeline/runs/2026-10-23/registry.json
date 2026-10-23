@@ -1,0 +1,19 @@
+[
+ {"id":"mus_art_institute_chicago","name":"Art Institute of Chicago","city":"Chicago","state":"IL","tz":"America/Chicago","url":"https://www.artic.edu/visit","benchmark":true},
+ {"id":"mus_mca_chicago","name":"Museum of Contemporary Art Chicago","city":"Chicago","state":"IL","tz":"America/Chicago","url":"https://mcachicago.org/visit/","benchmark":true},
+ {"id":"mus_national_museum_mexican_art","name":"National Museum of Mexican Art","city":"Chicago","state":"IL","tz":"America/Chicago","url":"https://nationalmuseumofmexicanart.org/visit","benchmark":true},
+ {"id":"mus_smart_museum","name":"Smart Museum of Art","city":"Chicago","state":"IL","tz":"America/Chicago","url":"https://smartmuseum.uchicago.edu/visit","benchmark":true},
+ {"id":"mus_depaul_art_museum","name":"DePaul Art Museum","city":"Chicago","state":"IL","tz":"America/Chicago","url":"https://resources.depaul.edu/art-museum/visit","benchmark":true},
+ {"id":"mus_ram_downtown","name":"Racine Art Museum","city":"Racine","state":"WI","tz":"America/Chicago","url":"https://www.ramart.org/ram-downtown/","benchmark":true},
+ {"id":"mus_milwaukee_art_museum","name":"Milwaukee Art Museum","city":"Milwaukee","state":"WI","tz":"America/Chicago","url":"https://mam.org/visit/","home":"https://mam.org/"},
+ {"id":"mus_chazen","name":"Chazen Museum of Art","city":"Madison","state":"WI","tz":"America/Chicago","url":"https://chazen.wisc.edu/visit/hours-location-parking/","home":"https://chazen.wisc.edu/"},
+ {"id":"mus_mia","name":"Minneapolis Institute of Art","city":"Minneapolis","state":"MN","tz":"America/Chicago","url":"https://new.artsmia.org/visit","home":"https://new.artsmia.org/","alternates":["Mia"]},
+ {"id":"mus_walker","name":"Walker Art Center","city":"Minneapolis","state":"MN","tz":"America/Chicago","url":"https://www.walkerart.org/visit/","home":"https://www.walkerart.org/","alternates":["Walker"]},
+ {"id":"mus_dia","name":"Detroit Institute of Arts","city":"Detroit","state":"MI","tz":"America/Detroit","url":"https://dia.org/visit","home":"https://dia.org/","alternates":["DIA"]},
+ {"id":"mus_umma","name":"University of Michigan Museum of Art","city":"Ann Arbor","state":"MI","tz":"America/Detroit","url":"https://umma.umich.edu/visit/","home":"https://umma.umich.edu/","alternates":["UMMA"]},
+ {"id":"mus_newfields","name":"Indianapolis Museum of Art at Newfields","city":"Indianapolis","state":"IN","tz":"America/Indiana/Indianapolis","url":"https://discovernewfields.org/hours","home":"https://discovernewfields.org/","alternates":["Newfields","IMA"]},
+ {"id":"mus_slam","name":"Saint Louis Art Museum","city":"St. Louis","state":"MO","tz":"America/Chicago","url":"https://www.slam.org/hours-location-parking/","home":"https://www.slam.org/","alternates":["SLAM"]},
+ {"id":"mus_nelson_atkins","name":"Nelson-Atkins Museum of Art","city":"Kansas City","state":"MO","tz":"America/Chicago","url":"https://nelson-atkins.org/visit/dates-hours/","home":"https://nelson-atkins.org/","alternates":["Nelson-Atkins"]},
+ {"id":"mus_cleveland","name":"Cleveland Museum of Art","city":"Cleveland","state":"OH","tz":"America/New_York","url":"https://www.clevelandart.org/plan-your-visit","home":"https://www.clevelandart.org/","alternates":["CMA"]},
+ {"id":"mus_cincinnati","name":"Cincinnati Art Museum","city":"Cincinnati","state":"OH","tz":"America/New_York","url":"https://www.cincinnatiartmuseum.org/visit/museum-hours/","home":"https://www.cincinnatiartmuseum.org/","alternates":["CAM"]}
+]

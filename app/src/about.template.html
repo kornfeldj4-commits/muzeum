@@ -1,0 +1,32 @@
+<main class="about wrap">
+  <p><a href="./" class="back-link">← Muzeum</a></p>
+  <h1>About the data</h1>
+  <p class="lead">Muzeum answers one question: which art museums are open on your day, what they cost, and what's on. Every fact comes from the museum's own website.</p>
+
+  <h2>Where the information comes from</h2>
+  <ol>
+    <li><strong>The list of museums</strong> comes from <a href="https://www.wikidata.org/">Wikidata</a>, the open database behind Wikipedia: art museums in every US state that list an official website. The list is refreshed weekly.</li>
+    <li><strong>Hours, holidays, prices and exhibitions</strong> are read every day from each museum's own visit page. An AI model reads the page using the same fixed instructions for every museum, and quotes the sentence it took the hours from.</li>
+    <li><strong>Written rules then check that reading</strong> before anything is shown: hours must be possible, the quoted sentence must contain the times, and when the page also publishes machine-readable hours, the two must agree. A page that hasn't changed since yesterday isn't read again; its reading is simply confirmed.</li>
+    <li>A few museums were also <strong>checked by hand</strong>. Those cards say "Checked" with the date.</li>
+  </ol>
+
+  <h2>What the labels mean</h2>
+  <dl class="legend">
+    <dt>Open</dt><dd>The official page was read in the last 14 days and every check passed.</dd>
+    <dt>Usually open</dt><dd>Read longer ago, not yet confirmed, or you're offline. Confirm on the official site before you go.</dd>
+    <dt>Closed</dt><dd>The official page lists the museum as closed that day, including holidays.</dd>
+    <dt>Hours unavailable</dt><dd>The official page didn't say.</dd>
+  </dl>
+  <p>Information older than 45 days is marked as possibly changed. If a museum's page stops loading for four months, the museum is removed until it can be read again.</p>
+
+  <h2>When something is wrong</h2>
+  <p>Hours change, and automated reading makes mistakes. Always check the official site before a special trip; every card links to it. <span class="report-line">To report an error, use <strong>Report a problem</strong> on that museum's card<!--REPORT--> and a person will check it.</span> Museums can ask for a correction the same way.</p>
+
+  <h2>Privacy</h2>
+  <p>Muzeum has no accounts, cookies, ads or tracking. Your searches stay on your device. The museum list and fonts are served from this site; no requests go to third parties while you browse.</p>
+
+  <h2>Credits</h2>
+  <p>Museum list: <a href="https://www.wikidata.org/">Wikidata</a> (CC0). Hours and prices: each museum's official website. Muzeum isn't affiliated with any museum. Typeface: Public Sans (SIL Open Font License).</p>
+  <p class="quiet">Data updated <span id="updated">recently</span>.</p>
+</main>

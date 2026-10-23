@@ -1,0 +1,2 @@
+# optional: renders pages that build their hours with JavaScript
+playwright>=1.48

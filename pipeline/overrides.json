@@ -1,0 +1,4 @@
+{
+ "_help": "Reviewer decisions, keyed by museum id (see state/review.md). Keys: confirm_hash (accept a held reading until the page changes), exclude (never show; give a reason), url (use this page instead), set (fix a field, e.g. {\"location.street\": \"111 S Michigan Ave\"}), note.",
+ "_example": {"mus_example": {"confirm_hash": "0123456789abcdef01234567", "note": "Checked by Jacob 2026-10-24"}}
+}

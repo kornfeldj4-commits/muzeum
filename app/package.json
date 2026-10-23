@@ -1,0 +1,19 @@
+{
+  "name": "muzeum-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Muzeum: which art museums are open on your day.",
+  "scripts": {
+    "build": "node build.js",
+    "build:preview": "node build.js --artifact",
+    "test:unit": "node --test tests/logic.test.js",
+    "test:preview": "node build.js --artifact --data tests/fixtures/museums.json && node tests/e2e.js",
+    "test:site": "node tests/site.e2e.js",
+    "test": "npm run test:unit && npm run test:preview && npm run test:site",
+    "smoke": "node tests/smoke.js"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.2",
+    "playwright": "1.63.0"
+  }
+}

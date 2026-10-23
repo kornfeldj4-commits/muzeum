@@ -1,0 +1,746 @@
+[
+ {
+  "id": "mus_art_institute_chicago",
+  "city_id": "chicago-il",
+  "name": {
+   "display": "Art Institute of Chicago",
+   "original": "Art Institute of Chicago",
+   "alternates": [
+    "AIC",
+    "Art Institute"
+   ]
+  },
+  "location": {
+   "street": "111 S Michigan Ave",
+   "city": "Chicago",
+   "region": "IL",
+   "country_code": "US",
+   "time_zone": "America/Chicago"
+  },
+  "official_url": "https://www.artic.edu/",
+  "admission": {
+   "currency": "USD",
+   "tiers": [
+    {
+     "label": "Adult",
+     "amount": 32,
+     "primary": true
+    },
+    {
+     "label": "Seniors 65+, students, teens 14–17",
+     "amount": 26
+    },
+    {
+     "label": "Adult, Illinois residents",
+     "amount": 27,
+     "eligibility": "Proof of Illinois residence"
+    },
+    {
+     "label": "Adult, Chicago residents",
+     "amount": 20,
+     "eligibility": "Proof of Chicago residence"
+    },
+    {
+     "label": "Children under 14",
+     "amount": 0,
+     "is_free": true,
+     "free_label": "Under 14 free"
+    },
+    {
+     "label": "Chicago teens under 18",
+     "amount": 0,
+     "is_free": true
+    }
+   ],
+   "notes": [
+    "Ticketed exhibitions cost $5 more.",
+    "Illinois residents are free on certain days."
+   ],
+   "timed_entry": null,
+   "day_notes": []
+  },
+  "hours": {
+   "weekly": [
+    {
+     "day": "MON",
+     "open": "11:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "TUE",
+     "open": null,
+     "close": null,
+     "closed": true
+    },
+    {
+     "day": "WED",
+     "open": "11:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "THU",
+     "open": "11:00",
+     "close": "20:00",
+     "closed": false
+    },
+    {
+     "day": "FRI",
+     "open": "11:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "SAT",
+     "open": "11:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "SUN",
+     "open": "11:00",
+     "close": "17:00",
+     "closed": false
+    }
+   ],
+   "exceptions": [
+    {
+     "date": "2026-11-26",
+     "closed": true,
+     "note": "Thanksgiving"
+    },
+    {
+     "date": "2026-12-25",
+     "closed": true,
+     "note": "Christmas"
+    },
+    {
+     "date": "2027-01-01",
+     "closed": true,
+     "note": "New Year's Day"
+    }
+   ],
+   "temporary_closure": null,
+   "note": null
+  },
+  "partial_closure_note": null,
+  "exhibitions": [],
+  "exhibitions_note": "Official visit page still promotes an exhibition that closed June 1.",
+  "access": {
+   "step_free_entry": "unknown",
+   "source_url": null
+  },
+  "provenance": {
+   "source_url": "https://www.artic.edu/visit",
+   "verified_at": "2026-10-23",
+   "conflict_flag": false,
+   "conflict_note": "A Choose Chicago listing shows different days and hours. Official site checked and used.",
+   "stale_reason": null
+  }
+ },
+ {
+  "id": "mus_mca_chicago",
+  "city_id": "chicago-il",
+  "name": {
+   "display": "Museum of Contemporary Art Chicago",
+   "original": "Museum of Contemporary Art Chicago",
+   "alternates": [
+    "MCA",
+    "MCA Chicago",
+    "Contemporary Art"
+   ]
+  },
+  "location": {
+   "street": "220 E Chicago Ave",
+   "city": "Chicago",
+   "region": "IL",
+   "country_code": "US",
+   "time_zone": "America/Chicago"
+  },
+  "official_url": "https://mcachicago.org/",
+  "admission": {
+   "currency": "USD",
+   "tiers": [
+    {
+     "label": "Adult",
+     "amount": 22,
+     "primary": true
+    },
+    {
+     "label": "Students, teachers, 65+",
+     "amount": 14
+    },
+    {
+     "label": "Adult, Chicago residents",
+     "amount": 19
+    },
+    {
+     "label": "Students, teachers, 65+, Chicago residents",
+     "amount": 10
+    },
+    {
+     "label": "18 and under",
+     "amount": 0,
+     "is_free": true,
+     "free_label": "18 and under free"
+    }
+   ],
+   "notes": [
+    "Pay what you can, in person only.",
+    "LINK (EBT) cardholders $3 for up to six people."
+   ],
+   "timed_entry": null,
+   "day_notes": [
+    {
+     "day": "TUE",
+     "text": "Free for Illinois residents 5–9 pm"
+    }
+   ]
+  },
+  "hours": {
+   "weekly": [
+    {
+     "day": "MON",
+     "open": null,
+     "close": null,
+     "closed": true
+    },
+    {
+     "day": "TUE",
+     "open": "10:00",
+     "close": "21:00",
+     "closed": false
+    },
+    {
+     "day": "WED",
+     "open": "10:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "THU",
+     "open": "10:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "FRI",
+     "open": "10:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "SAT",
+     "open": "10:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "SUN",
+     "open": "10:00",
+     "close": "17:00",
+     "closed": false
+    }
+   ],
+   "exceptions": [
+    {
+     "date": "2026-11-26",
+     "closed": true,
+     "note": "Thanksgiving"
+    },
+    {
+     "date": "2026-12-25",
+     "closed": true,
+     "note": "Christmas"
+    },
+    {
+     "date": "2027-01-01",
+     "closed": true,
+     "note": "New Year's Day"
+    }
+   ],
+   "temporary_closure": null,
+   "note": null
+  },
+  "partial_closure_note": null,
+  "exhibitions": [
+   {
+    "title": "Slow Dance",
+    "start": "2026-09-12",
+    "end": "2027-03-14"
+   },
+   {
+    "title": "From the Center: Looking at Lucy Lippard",
+    "start": "2026-08-01",
+    "end": "2027-07-11"
+   },
+   {
+    "title": "Kenzi Shiokava",
+    "start": "2026-06-27",
+    "end": "2027-01-31"
+   },
+   {
+    "title": "Atrium Project: Celeste Rapone",
+    "start": "2026-06-27",
+    "end": "2027-06-20"
+   }
+  ],
+  "access": {
+   "step_free_entry": "unknown",
+   "source_url": null
+  },
+  "provenance": {
+   "source_url": "https://mcachicago.org/visit/",
+   "verified_at": "2026-10-23",
+   "conflict_flag": false,
+   "conflict_note": null,
+   "stale_reason": null
+  }
+ },
+ {
+  "id": "mus_national_museum_mexican_art",
+  "city_id": "chicago-il",
+  "name": {
+   "display": "National Museum of Mexican Art",
+   "original": "National Museum of Mexican Art",
+   "alternates": [
+    "NMMA",
+    "Mexican Art"
+   ]
+  },
+  "location": {
+   "street": "1852 W 19th St",
+   "city": "Chicago",
+   "region": "IL",
+   "country_code": "US",
+   "time_zone": "America/Chicago"
+  },
+  "official_url": "https://nationalmuseumofmexicanart.org/",
+  "admission": {
+   "currency": "USD",
+   "tiers": [
+    {
+     "label": "Everyone",
+     "amount": 0,
+     "is_free": true,
+     "primary": true
+    }
+   ],
+   "notes": [],
+   "timed_entry": null,
+   "day_notes": []
+  },
+  "hours": {
+   "weekly": [
+    {
+     "day": "MON",
+     "open": null,
+     "close": null,
+     "closed": true
+    },
+    {
+     "day": "TUE",
+     "open": "10:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "WED",
+     "open": "10:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "THU",
+     "open": "10:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "FRI",
+     "open": "10:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "SAT",
+     "open": "10:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "SUN",
+     "open": "10:00",
+     "close": "17:00",
+     "closed": false
+    }
+   ],
+   "exceptions": [
+    {
+     "date": "2026-12-24",
+     "closed": false,
+     "open": "10:00",
+     "close": "14:00",
+     "note": "Christmas Eve hours"
+    },
+    {
+     "date": "2026-12-25",
+     "closed": true,
+     "note": "Christmas"
+    },
+    {
+     "date": "2026-12-31",
+     "closed": false,
+     "open": "10:00",
+     "close": "14:00",
+     "note": "New Year's Eve hours"
+    },
+    {
+     "date": "2027-01-01",
+     "closed": true,
+     "note": "New Year's Day"
+    }
+   ],
+   "temporary_closure": null,
+   "note": "Also closed on other major holidays."
+  },
+  "partial_closure_note": null,
+  "exhibitions": [],
+  "access": {
+   "step_free_entry": "yes",
+   "source_url": "https://nationalmuseumofmexicanart.org/visit?lang=es",
+   "detail": "Wheelchair accessible; all exhibitions on the main floor"
+  },
+  "provenance": {
+   "source_url": "https://nationalmuseumofmexicanart.org/visit",
+   "verified_at": "2026-10-23",
+   "conflict_flag": false,
+   "conflict_note": null,
+   "stale_reason": null
+  }
+ },
+ {
+  "id": "mus_smart_museum",
+  "city_id": "chicago-il",
+  "name": {
+   "display": "Smart Museum of Art",
+   "original": "Smart Museum of Art",
+   "alternates": [
+    "The Smart",
+    "University of Chicago"
+   ]
+  },
+  "location": {
+   "street": "5550 S Greenwood Ave",
+   "city": "Chicago",
+   "region": "IL",
+   "country_code": "US",
+   "time_zone": "America/Chicago"
+  },
+  "official_url": "https://smartmuseum.uchicago.edu/",
+  "admission": {
+   "currency": "USD",
+   "tiers": [
+    {
+     "label": "Everyone",
+     "amount": 0,
+     "is_free": true,
+     "primary": true
+    }
+   ],
+   "notes": [],
+   "timed_entry": null,
+   "day_notes": []
+  },
+  "hours": {
+   "weekly": [
+    {
+     "day": "MON",
+     "open": null,
+     "close": null,
+     "closed": true
+    },
+    {
+     "day": "TUE",
+     "open": "10:00",
+     "close": "16:30",
+     "closed": false
+    },
+    {
+     "day": "WED",
+     "open": "10:00",
+     "close": "16:30",
+     "closed": false
+    },
+    {
+     "day": "THU",
+     "open": "10:00",
+     "close": "16:30",
+     "closed": false
+    },
+    {
+     "day": "FRI",
+     "open": "10:00",
+     "close": "16:30",
+     "closed": false
+    },
+    {
+     "day": "SAT",
+     "open": "10:00",
+     "close": "16:30",
+     "closed": false
+    },
+    {
+     "day": "SUN",
+     "open": "10:00",
+     "close": "16:30",
+     "closed": false
+    }
+   ],
+   "exceptions": [],
+   "temporary_closure": null,
+   "note": "Closes for university holidays and between exhibitions."
+  },
+  "partial_closure_note": null,
+  "exhibitions": [],
+  "access": {
+   "step_free_entry": "unknown",
+   "source_url": null
+  },
+  "provenance": {
+   "source_url": "https://smartmuseum.uchicago.edu/visit",
+   "verified_at": "2026-10-23",
+   "conflict_flag": false,
+   "conflict_note": null,
+   "stale_reason": "The official visit page is dated Summer 2025."
+  }
+ },
+ {
+  "id": "mus_depaul_art_museum",
+  "city_id": "chicago-il",
+  "name": {
+   "display": "DePaul Art Museum",
+   "original": "DePaul Art Museum",
+   "alternates": [
+    "DPAM",
+    "DePaul"
+   ]
+  },
+  "location": {
+   "street": "935 W Fullerton Ave",
+   "city": "Chicago",
+   "region": "IL",
+   "country_code": "US",
+   "time_zone": "America/Chicago"
+  },
+  "official_url": "https://resources.depaul.edu/art-museum/",
+  "admission": {
+   "currency": "USD",
+   "tiers": [
+    {
+     "label": "Everyone",
+     "amount": 0,
+     "is_free": true,
+     "primary": true
+    }
+   ],
+   "notes": [],
+   "timed_entry": null,
+   "day_notes": []
+  },
+  "hours": {
+   "weekly": [
+    {
+     "day": "MON",
+     "open": null,
+     "close": null,
+     "closed": true
+    },
+    {
+     "day": "TUE",
+     "open": null,
+     "close": null,
+     "closed": true
+    },
+    {
+     "day": "WED",
+     "open": "11:00",
+     "close": "19:00",
+     "closed": false
+    },
+    {
+     "day": "THU",
+     "open": "11:00",
+     "close": "19:00",
+     "closed": false
+    },
+    {
+     "day": "FRI",
+     "open": "11:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "SAT",
+     "open": "11:00",
+     "close": "17:00",
+     "closed": false
+    },
+    {
+     "day": "SUN",
+     "open": "11:00",
+     "close": "17:00",
+     "closed": false
+    }
+   ],
+   "exceptions": [],
+   "temporary_closure": null,
+   "note": "Follows the DePaul academic calendar for closures."
+  },
+  "partial_closure_note": null,
+  "exhibitions": [],
+  "access": {
+   "step_free_entry": "yes",
+   "source_url": "https://resources.depaul.edu/art-museum/visit",
+   "detail": "Wheelchair accessible, with an elevator to the second floor"
+  },
+  "provenance": {
+   "source_url": "https://resources.depaul.edu/art-museum/visit",
+   "verified_at": "2026-10-23",
+   "conflict_flag": false,
+   "conflict_note": "A DePaul discount page lists weekend hours from noon. Official visit page checked and used.",
+   "stale_reason": null
+  }
+ },
+ {
+  "id": "mus_ram_downtown",
+  "city_id": "racine-wi",
+  "name": {
+   "display": "Racine Art Museum",
+   "original": "Racine Art Museum (RAM Downtown)",
+   "alternates": [
+    "RAM",
+    "RAM Downtown"
+   ]
+  },
+  "location": {
+   "street": "441 Main St",
+   "city": "Racine",
+   "region": "WI",
+   "country_code": "US",
+   "time_zone": "America/Chicago"
+  },
+  "official_url": "https://www.ramart.org/",
+  "admission": {
+   "currency": "USD",
+   "tiers": [
+    {
+     "label": "Adult",
+     "amount": 15,
+     "primary": true
+    },
+    {
+     "label": "Students, seniors 62+, veterans",
+     "amount": 10
+    },
+    {
+     "label": "Children 12 and under",
+     "amount": 0,
+     "is_free": true,
+     "free_label": "12 and under free"
+    },
+    {
+     "label": "Racine County residents",
+     "amount": 0,
+     "is_free": true,
+     "eligibility": "Valid ID"
+    }
+   ],
+   "notes": [
+    "Free on select First Fridays.",
+    "Some special exhibitions may cost extra."
+   ],
+   "timed_entry": null,
+   "day_notes": []
+  },
+  "hours": {
+   "weekly": [
+    {
+     "day": "MON",
+     "open": null,
+     "close": null,
+     "closed": true
+    },
+    {
+     "day": "TUE",
+     "open": null,
+     "close": null,
+     "closed": true
+    },
+    {
+     "day": "WED",
+     "open": "10:00",
+     "close": "16:00",
+     "closed": false
+    },
+    {
+     "day": "THU",
+     "open": "10:00",
+     "close": "20:00",
+     "closed": false
+    },
+    {
+     "day": "FRI",
+     "open": "10:00",
+     "close": "16:00",
+     "closed": false
+    },
+    {
+     "day": "SAT",
+     "open": "10:00",
+     "close": "16:00",
+     "closed": false
+    },
+    {
+     "day": "SUN",
+     "open": "12:00",
+     "close": "16:00",
+     "closed": false
+    }
+   ],
+   "exceptions": [],
+   "temporary_closure": null,
+   "note": null
+  },
+  "partial_closure_note": "Second-floor galleries closed for changeover",
+  "exhibitions": [
+   {
+    "title": "Tanya Crane: Embodied Histories—Exploring the Legacy of African Jewelry",
+    "start": null,
+    "end": "2027-01-10"
+   },
+   {
+    "title": "RAM Showcase: African Adornment",
+    "start": null,
+    "end": "2027-02-21"
+   },
+   {
+    "title": "Michael Velliquette: Intuitive Patterns",
+    "start": null,
+    "end": "2027-07-11"
+   }
+  ],
+  "access": {
+   "step_free_entry": "unknown",
+   "source_url": null
+  },
+  "provenance": {
+   "source_url": "https://www.ramart.org/ram-downtown/",
+   "verified_at": "2026-10-23",
+   "conflict_flag": false,
+   "conflict_note": null,
+   "stale_reason": null
+  }
+ }
+]
